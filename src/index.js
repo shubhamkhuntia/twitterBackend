@@ -7,10 +7,14 @@ app.listen(3000, async () => {
   console.log("server started at 3000");
   connect().then(console.log("MongoDB connected"));
 
-  Tweet.create({
-    content: "Hey Shubham",
-    likes: 23000,
-    noOfRetweets: 187,
-    comment: "Woo",
+  // Tweet.create({
+  //   content: "Hey Shubham",
+  //   likes: 23000,
+  //   noOfRetweets: 187,
+  //   comment: "Woo",
+  // });
+
+  let tweets = await TweetRepository.deleteTweet({
+    _id: "Type the mongoDB id here",
   });
 });
